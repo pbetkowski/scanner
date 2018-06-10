@@ -12,11 +12,10 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView textView;
+    static TextView textView;
     Button button1;
-    Button button2;
 
-    String barcode = "";
+    static String barcode = "";
 
     private ZXingScannerView scannerView;
 
@@ -24,9 +23,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView = (TextView) findViewById(R.id.t1);
         button1 =  (Button) findViewById(R.id.b1);
-        button2 =  (Button) findViewById(R.id.b2);
+
     }
 
     public void scan(View view)
@@ -38,10 +36,6 @@ public class MainActivity extends AppCompatActivity {
         scannerView.startCamera();
     }
 
-    public void read(View view)
-    {
-            textView.append(barcode);  //nie wyświetla
-    }
 
     @Override
     public void onPause() {
@@ -53,10 +47,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void handleResult(Result result) {
 
-            String code = result.getText();
-            barcode = code;        // przyjmuje wartość zeskanowanego kodu ale się nie wyświetla
-            Toast.makeText(MainActivity.this, code, Toast.LENGTH_LONG).show();  //wyświetla poprawnie
+            barcode = result.getText();
+            Toast.makeText(MainActivity.this, barcode, Toast.LENGTH_LONG).show();  //wyświetla poprawnie
             setContentView(R.layout.activity_main);
+            textView = (TextView) findViewById(R.id.t1);
+            textView.setText(barcode);
             scannerView.stopCamera();
         }
     }

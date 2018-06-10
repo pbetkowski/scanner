@@ -14,13 +14,7 @@
         android:layout_gravity="center"
         android:text="Scanner" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/b3"
-        android:onClick="read"
-        android:layout_gravity="center"
-        android:text="Read" />
+
 
     <TextView
         android:layout_width="match_parent"
@@ -30,11 +24,4 @@
         android:hint="Scanner result :"
          />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:layout_gravity="center"
-        android:id="@+id/b2"
-        android:text="Clean TextBox" />
 </LinearLayout>
