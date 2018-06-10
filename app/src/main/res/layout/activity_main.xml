@@ -14,6 +14,14 @@
         android:layout_gravity="center"
         android:text="Scanner" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/b3"
+        android:onClick="read"
+        android:layout_gravity="center"
+        android:text="Read" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
